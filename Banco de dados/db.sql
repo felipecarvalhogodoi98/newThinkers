@@ -88,6 +88,8 @@ insert into cozinha(tipo, horaAbertura, horaFechamento, pratoPrincipal)
 values("Chinesa", NOW(), NOW(), "Yakissoba");
 insert into cozinha(tipo, horaAbertura, horaFechamento, pratoPrincipal) 
 values("italiana", NOW(), NOW(), "Pizza");
+insert into cozinha(tipo, horaAbertura, horaFechamento, pratoPrincipal) 
+values("Mineira2", NOW(), NOW(), "FEIJOADA");
 
 -- insere funcionario na cozinha 1(mineira)
 insert into funcionario(nome, atividade, cozinha) values("Felipe", "Atendente", 1);
@@ -107,12 +109,13 @@ insert into cozinha_ingrediente values(2,3);
 -- Insere carne de porco na cozinha chinesa
 insert into cozinha_ingrediente values(3,2);
 
--- lista as cozinhas e seus ingredientes
+-- lista todas as cozinhas(inclusive sem ingredientes) e seus ingredientes
 SELECT c.tipo as NomeCozinha, i.nome as NomeIngrediente
-FROM cozinha c JOIN cozinha_ingrediente ci ON c.id = ci.cozinha JOIN ingredientes i ON i.id = ci.ingredientes;
+FROM cozinha c LEFT JOIN cozinha_ingrediente ci ON c.id = ci.cozinha LEFT JOIN ingredientes i ON i.id = ci.ingredientes;
 
-
-
+SELECT COUNT(*) FROM cozinha;
+SELECT * FROM cozinha WHERE DATEDIFF(horaFechamento, NOW()); 
+SELECT * from ingredientes WHERE validade < NOW();
 
 
 
