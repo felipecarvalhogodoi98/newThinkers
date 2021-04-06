@@ -1,5 +1,5 @@
 <?php
-    include('class/includes.php');
+    include('class/cozinha.php');
     $cozinha = isset($_GET['cozinha']) ? $_GET['cozinha'] : "null";
     $horaAbertura = isset($_GET['horaAbertura']) ? $_GET['horaAbertura'] : 10;
     $horaFechamento = isset($_GET['horaFechamento']) ? $_GET['horaFechamento'] : 14;
@@ -10,21 +10,21 @@
     echo "Iniciando os trabalhos do resturante<br>";
     //nome cozinha, horaAbertura, horaFechamento, Ingrediente, funcionario
     $cozinha = new Cozinha($cozinha, $horaAbertura, $horaFechamento, $ingrediente, $funcionario);
-    $i1 = new Ingrediente("Farinha", "10/12/2021");
-    $i2 = new Ingrediente("Arroz","10/12/2021");
-    $i3 = new Ingrediente("Carne de porco","10/12/2021");
-    $i4 = new Ingrediente("Linguica","10/12/2021");
-    $i5 = new Ingrediente("Feijao","10/12/2021");
+    $i1 = new Ingrediente("Farinha", new DateTime());
+    $i2 = new Ingrediente("Arroz",new DateTime());
+    $i3 = new Ingrediente("Carne de porco",new DateTime());
+    $i4 = new Ingrediente("Linguica",new DateTime());
+    $i5 = new Ingrediente("Feijao",new DateTime());
     $f1 = new Funcionario("Joao", "Atentendente");
     $f2 = new Funcionario("Felipe", "Atentendente");
     $f3 = new Funcionario("Fernando", "Cozinehiro");
     $f4 = new Funcionario("Natanael", "Gerente");
 
-    echo "Cozinha ".$cozinha->getTipo()."<br>";
-    echo "Hora abertura ".$cozinha->getHoraAberura()."<br>";
-    echo "Hora fechamento ".$cozinha->getHoraFechamento()."<br>";
-    echo "Max ingredientes ".$cozinha->getQuantMaxIngredientes()."<br>";
-    echo "Max funcionario ".$cozinha->getQuantMaxFuncionarios()."<br>";
+    echo "<b>Cozinha</b> ".$cozinha->getTipo()."<br>";
+    echo "<b>Hora abertura</b> ".$cozinha->getHoraAberura()."<br>";
+    echo "<b>Hora fechamento</b> ".$cozinha->getHoraFechamento()."<br>";
+    echo "<b>Max ingredientes</b> ".$cozinha->getQuantMaxIngredientes()."<br>";
+    echo "<b>Max funcionario</b> ".$cozinha->getQuantMaxFuncionarios()."<br>";
 
     $cozinha->getIngredientes();
     $cozinha->getFuncionarios();
@@ -34,14 +34,18 @@
     $cozinha->addIngrediente($i3);
     $cozinha->addIngrediente($i4);
     $cozinha->addIngrediente($i5);
-    echo "Add 5 ingredientes<br>";
+
     $cozinha->addFuncionario($f1);
     $cozinha->addFuncionario($f2);
     $cozinha->addFuncionario($f3);
     $cozinha->addFuncionario($f4);
-    echo "Add 4 funcionarios<br>";
-    
+
+    echo "<b>Ingredientes</b><br>";
     $cozinha->getIngredientes();
+    echo "<b>Funcionarios</b><br>";
     $cozinha->getFuncionarios();
+
+    echo "<pre>";
+    print_r($cozinha);
 
 ?>

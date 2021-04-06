@@ -62,6 +62,10 @@
         $numeroPratos = n;
     }
 
+    public function setTipo(String $tipo) : void{
+        $tipo = tipo;
+    }
+
     public function setnumeroCozinheiros(int $n) : void{
         $numeroCozinheiros = n;
     }

@@ -12,7 +12,15 @@
             return $this->nome;
         }
         public function getAtividade() : String{
-        return $this->atividade;
+            return $this->atividade;
+        }
+
+        public function setNome(String $nome) : void{
+            $this->nome = $nome;
+        }
+        
+        public function setAtividade(String $atividade) : void{
+            $this->atividade = $atividade;
         }
     
     }
