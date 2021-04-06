@@ -50,6 +50,14 @@
         return $this->horaFechamento;
     }
 
+    public function getQuantMaxIngredientes() : int{
+        return $this->quantMaxIngredientes;
+    }
+
+    public function getQuantMaxFuncionarios() : int{
+        return $this->quantMaxFuncionarios;
+    }
+
     public function setnumeroPratos(int $n) : void{
         $numeroPratos = n;
     }
