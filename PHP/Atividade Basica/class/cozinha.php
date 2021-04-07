@@ -58,20 +58,20 @@
         return $this->quantMaxFuncionarios;
     }
 
-    public function setnumeroPratos(int $n) : void{
-        $numeroPratos = n;
+    public function setnumeroPratos(int $numeroPratos) : void{
+        $this->numeroPratos = $numeroPratos;
     }
 
     public function setTipo(String $tipo) : void{
-        $tipo = tipo;
+        $this->tipo = $tipo;
     }
 
-    public function setnumeroCozinheiros(int $n) : void{
-        $numeroCozinheiros = n;
+    public function setnumeroCozinheiros(int $numeroCozinheiros) : void{
+        $this->numeroCozinheiros = $numeroCozinheiros;
     }
 
-    public function setTempoPreparo(int $n) : void{
-        $tempoPreparo = n;
+    public function setTempoPreparo(int $tempoPreparo) : void{
+        $this->tempoPreparo = $tempoPreparo;
     }
 
     public function prepararPratos() : void{
