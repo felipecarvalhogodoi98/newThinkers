@@ -40,51 +40,20 @@
             }
         }
 
-        public function adicionarIngrediente($nome, $data){
-            $ingrediente = new Ingrediente($nome, $data);
-            if($this->criado){
-                $this->cozinha->setIngrediente($ingrediente);
-            }
+        public function adicionarFuncionario(Funcionario $f){
+            $this->cozinha->setFuncionario($f);
         }
 
-        public function imprimiIngredientes(){
-            if($this->criado){
-                echo "<b>Ingredientes</b><br>";
-                $this->cozinha->getIngredientes();
-            }
-        }
-
-        public function adicionarFuncionario($nome, $atividade){
-            $funcionario = new Funcionario($nome, $atividade);
-            if($this->criado){
-                $this->cozinha->setFuncionario($funcionario);
-            }
+        public function adicionarIngrediente(Ingrediente $i){
+            $this->cozinha->setIngrediente($i);
         }
 
         public function imprimiFuncionarios(){
-            if($this->criado){
-                echo "<b>Funcionarios</b><br>";
-                $this->cozinha->getFuncionarios();
-            }
+            $this->cozinha->getFuncionarios();
         }
 
-        public function adicionarPedido($pedido){
-            if($this->criado){
-                $this->cozinha->setPedido($pedido);
-            }
-        }
-
-        public function terminaPedido(){
-            if($this->criado){
-                $this->cozinha->fimPrimeiroPedido();
-            }
-        }
-
-        public function imprimiPedidos(){
-            if($this->criado){
-                echo "<b>Pedidos</b><br>";
-                $this->cozinha->getPedidos();
-            }
+        public function imprimiIngredientes(){
+            $this->cozinha->getIngredientes();
         }
     }
 ?>
