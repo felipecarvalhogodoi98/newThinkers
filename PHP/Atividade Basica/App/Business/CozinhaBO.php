@@ -3,19 +3,32 @@
 
     class CozinhaBO{
 
-        public function __construct(){}
+        private bool $criado;
+        private $cozinha;
+
+        public function __construct(){
+            $this->criado = false;
+        }
+
+        public function getCriado() : bool{ 
+            return $this->criado; 
+        }
+
+        public function getDados() : void{ 
+            echo "<b>Nome </b>{$this->cozinha->getNome()}<br>";
+            echo "<b>PratoPrincipal </b>{$this->cozinha->getPratoPrincipal()}<br>";
+            echo "<b>HoraAberuta </b>{$this->cozinha->getHoraAbertura()}<br>";
+            echo "<b>HoraFechamento </b>{$this->cozinha->getHoraFechamento()}<br>";
+        }
 
         public function criar(){
             $this->validarDados();
-            $cozinha = new Cozinha($_GET['nome'],
+            $this->cozinha = new Cozinha($_GET['nome'],
                             $_GET['pratoPrincipal'], 
                             $_GET['horaAbertura'], 
                             $_GET['horaFechamento']
                         );
-            echo "{$cozinha->getNome()}\n";
-            echo "{$cozinha->getPratoPrincipal()}\n";
-            echo "{$cozinha->getHoraAbertura()}\n";
-            echo "{$cozinha->getHoraFechamento()}\n";
+            $this->criado = true;
         }
 
         public function validarDados(){
@@ -23,7 +36,54 @@
             isset($_GET['pratoPrincipal']) &&
             isset($_GET['horaAbertura']) &&
             isset($_GET['horaFechamento']) )){
-                throw new Exception('Falta parametros.');
+                throw new Exception('Falta parametros pelo metodo GET.');
+            }
+        }
+
+        public function adicionarIngrediente($nome, $data){
+            $ingrediente = new Ingrediente($nome, $data);
+            if($this->criado){
+                $this->cozinha->setIngrediente($ingrediente);
+            }
+        }
+
+        public function imprimiIngredientes(){
+            if($this->criado){
+                echo "<b>Ingredientes</b><br>";
+                $this->cozinha->getIngredientes();
+            }
+        }
+
+        public function adicionarFuncionario($nome, $atividade){
+            $funcionario = new Funcionario($nome, $atividade);
+            if($this->criado){
+                $this->cozinha->setFuncionario($funcionario);
+            }
+        }
+
+        public function imprimiFuncionarios(){
+            if($this->criado){
+                echo "<b>Funcionarios</b><br>";
+                $this->cozinha->getFuncionarios();
+            }
+        }
+
+        public function adicionarPedido($pedido){
+            if($this->criado){
+                $this->cozinha->setPedido($pedido);
+            }
+        }
+
+        public function terminaPedido(){
+            if($this->criado){
+                $this->cozinha->fimPrimeiroPedido();
+            }
+        }
+
+        public function imprimiPedidos(){
+            if($this->criado){
+                echo "<b>Pedidos</b><br>";
+                $this->cozinha->getPedidos();
             }
         }
     }

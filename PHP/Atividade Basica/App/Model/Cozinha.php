@@ -10,6 +10,7 @@
     private int $horaFechamento;
     private $ingredientes;
     private $funcionarios;
+    private $filaPedidos;
     
 
     public function __construct(String $nome, string $pratoPrincipal, int $horaAbertura, int $horaFechamento){
@@ -19,8 +20,8 @@
         $this->horaFechamento = $horaFechamento;
 
         $this->ingredientes = array();
-        
         $this->funcionarios = array();
+        $this->filaPedidos = array();
         
     }
 
@@ -69,7 +70,7 @@
            echo "<br>";
         }else{
             foreach($this->ingredientes as $i){
-                echo $i->getNome();
+                echo "Nome: {$i->getNome()} => Data validade: {$i->getDataValidade()}";
                 echo "<br>";
             }
         }
@@ -85,10 +86,30 @@
             echo "<br>";
         }else{
             foreach($this->funcionarios as $f){
-                echo $f->getNome() ;
+                echo "Nome {$f->getNome()} => Atividade {$f->getAtividade()}" ;
                 echo "<br>";
             }
         }
+    }
+
+    public function setPedido(string $pedido): void{
+        array_push($this->filaPedidos, $pedido);
+    }
+
+    public function getPedidos() : void{
+        if(count($this->filaPedidos) == 0){
+            echo "Nao existe pedidos";
+            echo "<br>";
+        }else{
+            foreach($this->filaPedidos as $pedido){
+                echo "{$pedido}" ;
+                echo "<br>";
+            }
+        }
+    }
+
+    public function fimPrimeiroPedido(){
+        array_shift($this->filaPedidos);
     }
 
     }

@@ -12,11 +12,11 @@
         return $this->nome;
         }
     
-        public function getDataValidade() : Datetime{
-            return $this->dataValidade;
+        public function getDataValidade() : string{
+            return $this->dataValidade->format('Y-m-d H:i:s');
         }
         
-        public function setNome(Datetime $Nome) : void{
+        public function setNome(Datetime $nome) : void{
             $this->nome = $nome;
         }
         
