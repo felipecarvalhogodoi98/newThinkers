@@ -1,6 +1,7 @@
 <?php
     require_once('Funcionario.php');
     require_once('Ingrediente.php');
+    require_once('Pedido.php');
 
     class Cozinha{
 
@@ -10,7 +11,8 @@
     private int $horaFechamento;
     private $ingredientes;
     private $funcionarios;
-    private $filaPedidos;
+    private $pedidos;
+    
     
 
     public function __construct(String $nome, string $pratoPrincipal, int $horaAbertura, int $horaFechamento){
@@ -21,10 +23,11 @@
 
         $this->ingredientes = array();
         $this->funcionarios = array();
-        $this->filaPedidos = array();
+        $this->pedidos = array();
         
     }
 
+    //get
     public function getNome() : String{
         return $this->nome;
     }
@@ -41,7 +44,19 @@
         return $this->horaFechamento;
     }
 
+    public function getIngredientes() : array{
+        return $this->ingredientes;
+    }
 
+    public function getFuncionarios() : array{
+        return $this->funcionarios;
+    }
+
+    public function getPedidos() : array{
+        return $this->pedidos;
+    }
+
+    //set
     public function setNome(String $nome) : void{
         $this->nome = $nome;
     }
@@ -60,57 +75,20 @@
 
     public function setIngrediente(Ingrediente $i) : void{   
         array_push($this->ingredientes, $i);
-        
-    }
-
-    public function getIngredientes() : void{
-        $result = count($this->ingredientes);
-        if($result == 0){
-           echo "Nao existe ingredientes";
-           echo "<br>";
-        }else{
-            foreach($this->ingredientes as $i){
-                echo "Nome: {$i->getNome()} => Data validade: {$i->getDataValidade()}";
-                echo "<br>";
-            }
-        }
     }
 
     public function setFuncionario(Funcionario $f): void{
         array_push($this->funcionarios, $f);
     }
 
-    public function getFuncionarios() : void{
-        if(count($this->funcionarios) == 0){
-            echo "Nao existe funcionarios";
-            echo "<br>";
-        }else{
-            foreach($this->funcionarios as $f){
-                echo "Nome {$f->getNome()} => Atividade {$f->getAtividade()}" ;
-                echo "<br>";
-            }
-        }
+    public function setPedido(Pedido $p): void{
+        array_push($this->pedidos, $p);
     }
 
-    public function setPedido(string $pedido): void{
-        array_push($this->filaPedidos, $pedido);
+    public function entregarPedido(){
+        array_shift($this->pedidos);
     }
 
-    public function getPedidos() : void{
-        if(count($this->filaPedidos) == 0){
-            echo "Nao existe pedidos";
-            echo "<br>";
-        }else{
-            foreach($this->filaPedidos as $pedido){
-                echo "{$pedido}" ;
-                echo "<br>";
-            }
-        }
-    }
-
-    public function fimPrimeiroPedido(){
-        array_shift($this->filaPedidos);
-    }
 
     }
 

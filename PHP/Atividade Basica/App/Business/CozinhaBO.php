@@ -48,12 +48,56 @@
             $this->cozinha->setIngrediente($i);
         }
 
+        public function adicionarPedido(Pedido $p){
+            $this->cozinha->setPedido($p);
+        }
+
+        public function primeiroPedido(){
+            $pedidos =  $this->cozinha->getPedidos();
+            return "Cliente: {$pedidos[0]->getCliente()} => Prato: {$pedidos[0]->getPrato()}";
+        }
+
+        public function entregarPedido(){
+            $this->cozinha->entregarPedido();
+        }
+
         public function imprimiFuncionarios(){
-            $this->cozinha->getFuncionarios();
+            $funcionarios = $this->cozinha->getFuncionarios();
+            if(count($funcionarios) == 0){
+                echo "Nao existe funcionarios";
+                echo "<br>";
+            }else{
+                foreach($funcionarios as $f){
+                    echo "Nome {$f->getNome()} => Atividade {$f->getAtividade()}" ;
+                    echo "<br>";
+                }
+            }
         }
 
         public function imprimiIngredientes(){
-            $this->cozinha->getIngredientes();
+            $ingredientes = $this->cozinha->getIngredientes();
+            if(count($ingredientes) == 0){
+                echo "Nao existe ingredientes";
+                echo "<br>";
+            }else{
+                foreach($ingredientes as $i){
+                    echo "Nome: {$i->getNome()} => Data validade: {$i->getDataValidade()}";
+                    echo "<br>";
+                }
+            }
+        }
+
+        public function imprimiPedidos(){
+            $pedidos = $this->cozinha->getPedidos();
+            if(count($pedidos) == 0){
+                echo "Nao existe pedidos";
+                echo "<br>";
+            }else{
+                foreach($pedidos as $i){
+                    echo "Cliente: {$i->getCliente()} => Prato: {$i->getPrato()}";
+                    echo "<br>";
+                }
+            }
         }
     }
 ?>
