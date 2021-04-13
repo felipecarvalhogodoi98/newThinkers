@@ -15,7 +15,7 @@
         $dados = array($cozinha->id,$cozinha->nome,$cozinha->abertura,$cozinha->fechamento);
         ?>
         <!-- EDITAR ............................. -->
-        <form name="form1" method="POST" action="api/cozinha/update/{{$dados[0]}}">
+        <form name="form1" method="POST" action="api/cozinha/{{$dados[0]}}">
         <table>
             <center>
                 <h3>Editar Cozinha</h3>

@@ -10,7 +10,7 @@ $router->group(['prefix' => "/api/cozinha"], function() use($router){
     $router->delete("/{id}", "CozinhaController@destroy");
 
     //metodo errado
-    $router->post("/update/{id}", "CozinhaController@update");
+    $router->post("/{id}", "CozinhaController@update");
 });
 
 //web
