@@ -1,0 +1,46 @@
+.App {
+  padding: 5% 15% 5% 15%;
+  text-align: center;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+form{
+  width: 100%;
+}
+
+form > input{
+  width: 50%
+}
+
+form > button{
+  margin-left: 30px;
+  background-color: green;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul > li{
+  padding: 5px;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+ul > li span{
+  text-align: left;
+  width: 80%;
+}
+
+.hide{
+  display: none;
+}
+
