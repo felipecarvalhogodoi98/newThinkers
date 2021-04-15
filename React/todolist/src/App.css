@@ -1,12 +1,13 @@
 .App {
-  padding: 5% 15% 5% 15%;
+  padding: 1% 15% 1% 15%;
   text-align: center;
 }
 
 button {
   border: 0;
-  background: transparent;
+  background: #f0fff0;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 form{
@@ -18,7 +19,6 @@ form > input{
 }
 
 form > button{
-  margin-left: 30px;
   background-color: green;
 }
 
@@ -35,8 +35,11 @@ ul > li{
   flex-direction: row;
 }
 
-ul > li span{
+ul > li input{
   text-align: left;
+  width: 80%;
+}
+ul > li span{
   width: 80%;
 }
 

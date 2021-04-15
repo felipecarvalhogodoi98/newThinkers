@@ -1,20 +1,36 @@
 import { useState } from "react";
 import { FaRegCheckSquare, FaRegSquare } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
 import "./App.css";
 
 function App() {
   const [list, setList] = useState([]);
   const [status, setStatus] = useState("pendentes");
 
-  function onSubmit(e) {
+  function addNewTask(e) {
     e.preventDefault();
-    console.log(e.target.task.value);
     const task = {
       id: new Date(),
       name: e.target.task.value,
       status: "pendente"
     };
     setList([...list, task]);
+  }
+
+  function updateTask(e, item){
+    e.preventDefault();
+    const newList = list.map((t) => {
+      if (t.id === item.id) 
+          t.name = e.target.value;
+      return t;
+    });
+    setList(newList);
+  }
+
+  function deleteTask(index){
+    const newList = Array.from(list);
+    newList.splice(index, 1);
+    setList(newList);
   }
 
   function done(item) {
@@ -33,7 +49,8 @@ function App() {
   
   return (
     <div className="App">
-      <form onSubmit={onSubmit}>
+      <h1>TODO List</h1>
+      <form onSubmit={addNewTask}>
         <input name="task" />
         <button type="submit">Adicionar</button>
       </form>
@@ -44,11 +61,14 @@ function App() {
             <li style={item.status === "feito" ? { textDecoration: "line-through" } : {}} key={index}
               className={item.status === "feito" && status === "todos" ? "hide" : ""}
             >
-              <span>{item.name}</span>
+              <input value={item.name} onChange={(e) => updateTask(e, item)} />
               <button onClick={() => done(item)}>
                 {item.status === "feito" ? 
                   <FaRegCheckSquare /> : 
                   <FaRegSquare />}
+              </button>
+              <button onClick={() => deleteTask(index)}>
+                <AiFillDelete />
               </button>
             </li>
           );
