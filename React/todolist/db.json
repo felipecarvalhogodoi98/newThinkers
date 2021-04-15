@@ -1,0 +1,26 @@
+{
+    "list": [
+        { 
+            "id": 1, 
+            "name": "Estudo",
+            "tasks": [
+                { 
+                    "id": 1,
+                    "name": "javascript",
+                    "status": "pendente"
+                }
+            ]
+        },
+        { 
+            "id": 2, 
+            "name": "Treino",
+            "tasks": [
+                { 
+                    "id": 1,
+                    "name": "malhar",
+                    "status": "pendente"
+                }
+            ]
+        }
+    ]
+  }

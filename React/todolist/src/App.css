@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+a{
+  text-decoration: none;
+  color: blue;
+}
+
 button {
   border: 0;
   background: #f0fff0;
@@ -18,9 +23,6 @@ form > input{
   width: 50%
 }
 
-form > button{
-  background-color: green;
-}
 
 ul {
   list-style: none;
@@ -35,11 +37,12 @@ ul > li{
   flex-direction: row;
 }
 
-ul > li input{
+ul > li > span{
   text-align: left;
   width: 80%;
 }
-ul > li span{
+
+input{
   width: 80%;
 }
 
