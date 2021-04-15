@@ -3,16 +3,31 @@ import { FaRegCheckSquare, FaRegSquare } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { GrAdd } from "react-icons/gr";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function Tasks() {
-    const params = useParams();
-
-    useEffect(() => {
-        console.log(params);
-        }, [params])
+    const params = useParams();   
     const [list, setList] = useState([]);
     const [status, setStatus] = useState("pendentes");
     const [isEditing, setIsEditing] = useState("");
+    const [name, setName] = useState("");
+    
+
+    async function getTasks(){
+        const res = await axios.get("http://localhost:3001/list/"+params.id);
+        setList(res.data.tasks);
+        setName(res.data.name);
+    }
+
+    async function putList(){
+        await axios.put("http://localhost:3001/list/"+params.id,
+        {
+            "id": params.id,
+            "name": name,
+            "tasks": [...list]
+        });
+    }
+
 
     function addNewTask(e) {
         e.preventDefault();
@@ -71,9 +86,18 @@ function Tasks() {
         if(item.status !== "feito") setIsEditing(item.id);
     }
   
+    useEffect(() => {
+        getTasks();
+    }, [])
+
+    useEffect(() =>{
+        putList();
+    }, [list])
+
     return (
         <div className="App">
-
+        
+        <h2>{name}</h2>
         <form onSubmit={addNewTask}>
             <input name="task" id="task" />
             <button type="submit"><GrAdd className="svg" /></button>

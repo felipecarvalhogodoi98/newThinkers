@@ -14,8 +14,7 @@ function App() {
   return (
     <Router >
       <div style={{ padding: 20 }}>
-        <Link to="/">Lista de Tarefas</Link> |
-        <Link to="/list/1"> Tarefa</Link> 
+        <Link to="/">Lista de Tarefas</Link> 
         <Switch>
           <Route exact path="/" >
             <ListTasks />
