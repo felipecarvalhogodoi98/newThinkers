@@ -15,8 +15,10 @@ function Tasks() {
 
     async function getTasks(){
         const res = await axios.get("http://localhost:3001/list/"+params.id);
-        setList(res.data.tasks);
-        setName(res.data.name);
+        if(res.status === 200){
+            setList(res.data.tasks);
+            setName(res.data.name);
+        }
     }
 
     async function putList(){

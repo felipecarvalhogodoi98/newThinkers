@@ -1,56 +1,15 @@
 {
   "list": [
     {
-      "id": 1,
-      "name": "1",
-      "tasks": [
-        {
-          "id": 1618520856186,
-          "name": "1",
-          "status": "pendente"
-        }
-      ]
-    },
-    {
       "id": 2,
-      "name": "Treino",
+      "name": "12",
       "tasks": [
         {
           "id": 1,
           "name": "malhar",
-          "status": "pendente"
+          "status": "feito"
         }
       ]
-    },
-    {
-      "id": 30,
-      "name": 30,
-      "tasks": []
-    },
-    {
-      "id": 31,
-      "name": 31,
-      "tasks": []
-    },
-    {
-      "id": 32,
-      "name": 32,
-      "tasks": []
-    },
-    {
-      "id": 1618518685534,
-      "name": "123",
-      "tasks": []
-    },
-    {
-      "id": 1618518787734,
-      "name": "123",
-      "status": "pendente"
-    },
-    {
-      "id": 1618518803390,
-      "name": "1234",
-      "status": "pendente"
     }
   ]
 }

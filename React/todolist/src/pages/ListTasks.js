@@ -10,7 +10,7 @@ function ListTasks() {
 
     async function getList(){
         const res = await axios.get("http://localhost:3001/list");
-        setList(res.data);
+        if(res.status === 200) setList(res.data);
     }
 
     async function postList(id, name){
@@ -20,6 +20,19 @@ function ListTasks() {
                 "name": name,
                 "tasks": []
             });
+    }
+
+    async function putList(id, name, tasks){
+        await axios.put("http://localhost:3001/list/"+id,
+        {
+            "id": id,
+            "name": name,
+            "tasks": tasks
+        });
+    }
+
+    async function deleteList(id){
+        await axios.delete("http://localhost:3001/list/"+id);
     }
 
     function addNewList(e) {
@@ -44,17 +57,22 @@ function ListTasks() {
     }
 
     function updateList(e, item){
-        const newList = list.map((t) => {
-        if (t.id === item.id) 
-            t.name = e.target.value;
-        return t;
-        });
-        setList(newList);
-        setIsEditing("");
+        e.preventDefault();
+        if(e.target.value !== ""){
+            const newList = list.map((t) => {
+            if (t.id === item.id) 
+                t.name = e.target.value;
+            return t;
+            });
+            setList(newList);
+            setIsEditing("");
+            putList(item.id, item.name, item.tasks);
+        }
     }
 
     function deleteTask(index){
         const newList = Array.from(list);
+        deleteList(newList[index].id);
         newList.splice(index, 1);
         setList(newList);
     }  
@@ -87,7 +105,7 @@ function ListTasks() {
                         <span>
                         {
                             isEditing === item.id ?
-                            <input defaultValue={item.name} onBlur={(e) => onBlur(e, item)} onKeyDown={(e) => onKeyDown(e, item)} /> :
+                            <input defaultValue={item.name} id="task" onBlur={(e) => onBlur(e, item)} onKeyDown={(e) => onKeyDown(e, item)} /> :
                             <p onClick={() => isPending(item)}>{item.name}</p>
                         }
                         </span>
