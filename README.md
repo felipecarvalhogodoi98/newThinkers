@@ -16,9 +16,9 @@ Em desenvolvimento
 <h2>Trilha ReactJS</h2>
 
   - TODO list
-  - Rotas
-  - Consumo de API com axios
-  - em desenvolvimento
+    - Rotas
+    - Consumo de API com axios
+    - em desenvolvimento
   
 <h2>Tech agil</h2>
   
