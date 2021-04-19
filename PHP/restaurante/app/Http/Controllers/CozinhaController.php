@@ -22,7 +22,7 @@ class CozinhaController extends Controller{
     }
 
     public function store(Request $request){
-        return $this->cozinhaService->store($request);
+        return $this->cozinhaService->post($request);
     }
 
     public function update(Request $request, $id){

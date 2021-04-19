@@ -37,7 +37,7 @@ class CozinhaService{
 
     public function post(Request $request){
         try{
-            $cozinha = $this->cozinhaRepository->post($request);
+            $cozinha = $this->cozinhaRepository->store($request);
             return response() -> json($cozinha,Response::HTTP_OK);
         }catch (Exception $e){
             return response()->json($e->getMessage());
