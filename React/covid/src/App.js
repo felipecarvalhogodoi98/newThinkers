@@ -5,8 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Cases from "./pages/Cases";
-import Vacinas from "./pages/Vacinas";
+import Info from "./pages/Info";
 import { Layout } from 'antd';
 
 function App() {
@@ -19,10 +18,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/:country">
-            <Cases />
-          </Route>
-          <Route exact path="/:country/vacinas">
-            <Vacinas />
+            <Info />
           </Route>
         </Switch>
       </Router>
