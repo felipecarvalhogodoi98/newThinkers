@@ -4,7 +4,7 @@
 Em desenvolvimento
 
 
-<h2>Trilha PHP</h2>
+<h2>Trilha BackEnd - PHP</h2>
 <p>API RESTful em Laravel/Lumen</p>
 
   - getAll 
@@ -13,12 +13,13 @@ Em desenvolvimento
   - put
   - delete
 
-<h2>Trilha ReactJS</h2>
+<h2>Trilha FrontEnd - ReactJS</h2>
 
   - TODO list
     - Rotas
     - Consumo de API com axios
     - em desenvolvimento
+  - Consumo API Covid <a href>https://github.com/M-Media-Group/Covid-19-API</a> 
   
 <h2>Tech agil</h2>
   
