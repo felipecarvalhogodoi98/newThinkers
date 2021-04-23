@@ -4,19 +4,23 @@ import {
   Route,
 } from "react-router-dom";
 import { Layout } from 'antd';
-import HomePage from "./home.page";
+import HomePage from "./containers/home.page";
+import Login from "./containers/login";
 import Auth from "./Auth";
-
+import { useAuth } from "./providers/auth";
 
 function App() {  
+  const { isLoggedIn } = useAuth();
 
   return (
-    <Layout.Content style={{ padding: 40 }}>
+    <div className="App">
+    
+    <Layout.Content >
       
       <Router>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            {isLoggedIn ? <HomePage /> : <Login />}
           </Route>
           <Route exact path="/auth/:code?">
             <Auth />
@@ -25,6 +29,7 @@ function App() {
       </Router>
       
     </Layout.Content>
+    </div>
   );
 }
 

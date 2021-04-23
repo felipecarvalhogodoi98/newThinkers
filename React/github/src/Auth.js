@@ -2,8 +2,13 @@ import { useLocation} from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { Spin } from "antd";
+import  { Redirect } from 'react-router-dom';
+import {words} from "lodash";
+import { useAuth } from "./providers/auth";
+
 function Auth(){
-    const location = useLocation();
+    const location = useLocation();   
+    const { setToken, isLoggedIn, setIsLoggedIn } = useAuth(); 
 
     function getCode(){
         const [ , code] = location.search.split('code=');
@@ -15,15 +20,22 @@ function Auth(){
     async function getToken(code){
         try {
             const {data} = await axios.post(
-              'https://github.com/login/oauth/access_token',
+              'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
               { 
+                headers : {"Content-type": "application/json"},
                 client_id: process.env.REACT_APP_CLIENT_ID,
                 client_secret: process.env.REACT_APP_CLIENT_SECRET,
                 code: code,
               },
-              {headers: { accept: 'application/json' }}
+              
             );
-              console.log(data);
+            if (!data.includes('error')) {
+                const [, token] = words(data, /\=(.*?)\&/);
+                setToken(token);
+                setIsLoggedIn(true);
+              }
+            ;
+              
             
           } catch (error) {
             console.log('error', error);
@@ -36,7 +48,10 @@ function Auth(){
 
     return(
         <>
-            <Spin/>
+            {!isLoggedIn ? 
+                <Spin className="autenticacao" tip="Autenticando..." /> :
+                <Redirect to="/" />
+            }
         </>
     );
 }
