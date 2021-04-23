@@ -20,6 +20,7 @@ Em desenvolvimento
     - Consumo de API com axios
     - em desenvolvimento
   - Consumo API Covid <a href>https://github.com/M-Media-Group/Covid-19-API</a> 
+  - Autenticação com GITHUB-api
   
 <h2>Tech agil</h2>
   
