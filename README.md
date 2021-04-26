@@ -23,6 +23,7 @@ Em desenvolvimento
   - Autenticação com GitHub
     - Context API
     - Follow and unfollow a user
+    - Oauth da API do Github
     - <a href>https://docs.github.com/en/rest</a> 
   
 <h2>Tech agil</h2>
