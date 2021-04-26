@@ -18,7 +18,7 @@ Em desenvolvimento
   - <a href="https://github.com/felipecarvalhogodoi98/newThinkers/tree/main/React/todolist">TodoList</a>
     - Rotas
     - Consumo de API com axios
-    - em desenvolvimento
+    - Hooks
   - <a href="https://github.com/felipecarvalhogodoi98/newThinkers/tree/main/React/covid">Covid</a>
     - <a href="https://github.com/M-Media-Group/Covid-19-API">API</a> 
   - <a href="https://github.com/felipecarvalhogodoi98/newThinkers/tree/main/React/github">GitHub</a>
