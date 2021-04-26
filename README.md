@@ -34,4 +34,4 @@ Em desenvolvimento
   - SCRUM
 
 
-<b><a href="www.linkedin.com/in/felipe-carvalho-godoi-164a05189">Linkedin</a></b>
+<b><a href="https://www.linkedin.com/in/felipe-carvalho-godoi-164a05189">Linkedin</a></b>
