@@ -33,4 +33,5 @@ Em desenvolvimento
   - Pensamento Agil
   - SCRUM
 
-<a href="www.linkedin.com/in/felipe-carvalho-godoi-164a05189">Linkedin</a>
+
+<b><a href="www.linkedin.com/in/felipe-carvalho-godoi-164a05189">Linkedin</a></b>
