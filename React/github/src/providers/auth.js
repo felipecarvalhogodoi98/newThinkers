@@ -9,16 +9,28 @@ export const AuthProvider = ({children}) =>{
     const [user, setUser] = useState({});
 
     async function getDataUser(){
-        const res = await axios.get("https://api.github.com/user",{
-        headers: {
-          Authorization: `token ${token}`,
-        },
-      });
+        axios.defaults.baseURL = 'https://api.github.com';
+        axios.defaults.headers.common['Authorization'] = `token ${token}`;
+        const res = await axios.get("/user");
         setUser(res.data);
     }
 
+    async function follow(username){
+        const res = await axios.put(`/user/following/${username}`);
+        if(res.status === 204){
+          return true;
+        }
+    }
+
+    async function unfollow(username){
+        const res = await axios.delete(`/user/following/${username}`);
+        if(res.status === 204){
+          return true;
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{user, setUser, token, setToken, isLoggedIn, setIsLoggedIn, getDataUser}}>
+        <AuthContext.Provider value={{user, setUser, token, setToken, isLoggedIn, setIsLoggedIn, getDataUser, follow, unfollow}}>
             {children}
         </AuthContext.Provider>
     );

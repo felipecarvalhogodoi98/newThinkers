@@ -1,13 +1,17 @@
 import { Button } from "antd";
+import {AiFillGithub} from "react-icons/ai";
 function Login(){
     return (
+        <div className="login">
+        <h2>Login</h2>
         <Button 
-            className="login"
             href={"https://github.com/login/oauth/authorize"
             +"?client_id=" +process.env.REACT_APP_CLIENT_ID+
-            "&scope=user-repo"}
+            "&scope=user"}
             type="primary"
-        >Login com GitHub</Button>
+            icon={<AiFillGithub />}
+        > Login com GitHub</Button>
+        </div>
     )
     
 }

@@ -4,27 +4,28 @@ import { useEffect } from "react";
 
 function Profile(){
     const {user, setUser, getDataUser, setToken, setIsLoggedIn} = useAuth();
-
     const logout = () =>{
         setIsLoggedIn(false);
+        setUser({});
         setToken("");
     }
 
     useEffect(() => {
         getDataUser();
-    })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     return (
         <>
         <PageHeader
-            key={user.login}
-            title={user.name}
-            subTitle={user.location}
+            title={<img className="img" alt="example" src={user.avatar_url} />}
+            subTitle={user.name}
             extra={[
                 <Button onClick={logout} danger>Logout</Button>
             ]}
         >
         </PageHeader>
+ 
         
         </>
     );

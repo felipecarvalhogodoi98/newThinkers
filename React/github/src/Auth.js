@@ -33,10 +33,7 @@ function Auth(){
                 const [, token] = words(data, /\=(.*?)\&/);
                 setToken(token);
                 setIsLoggedIn(true);
-              }
-            ;
-              
-            
+            }
           } catch (error) {
             console.log('error', error);
           }
