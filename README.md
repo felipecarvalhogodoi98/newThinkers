@@ -15,16 +15,17 @@ Em desenvolvimento
 
 <h2>Trilha FrontEnd - ReactJS</h2>
 
-  - TODO list
+  - <a href="https://github.com/felipecarvalhogodoi98/newThinkers/tree/main/React/todolist">TodoList</a>
     - Rotas
     - Consumo de API com axios
     - em desenvolvimento
-  - Consumo API Covid <a href>https://github.com/M-Media-Group/Covid-19-API</a> 
-  - Autenticação com GitHub
+  - <a href="https://github.com/felipecarvalhogodoi98/newThinkers/tree/main/React/covid">Covid</a>
+    - <a href="https://github.com/M-Media-Group/Covid-19-API">API</a> 
+  - <a href="https://github.com/felipecarvalhogodoi98/newThinkers/tree/main/React/github">GitHub</a>
     - Context API
     - Follow and unfollow a user
     - Oauth da API do Github
-    - <a href>https://docs.github.com/en/rest</a> 
+    - <a href="https://docs.github.com/en/rest">Documentação</a> 
   
 <h2>Tech agil</h2>
   
