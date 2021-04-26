@@ -32,3 +32,5 @@ Em desenvolvimento
   - 12 principios
   - Pensamento Agil
   - SCRUM
+
+<a href="www.linkedin.com/in/felipe-carvalho-godoi-164a05189">Linkedin</a>
