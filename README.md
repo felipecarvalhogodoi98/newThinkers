@@ -33,5 +33,14 @@ Em desenvolvimento
   - Pensamento Agil
   - SCRUM
 
+<h2>O que aprendi?</h2>
 
-<b><a href="https://www.linkedin.com/in/felipe-carvalho-godoi-164a05189">Linkedin</a></b>
+![JavaScript](https://img.shields.io/badge/-Javascript-333?style=for-the-badge&logo=javascript)
+![Node.js](https://img.shields.io/badge/-Node.js-333?style=for-the-badge&logo=node.js)
+![React JS](https://img.shields.io/badge/-React-333?style=for-the-badge&logo=react)
+![PHP](https://img.shields.io/badge/-Php-333?style=for-the-badge&logo=php)
+![Laravel](https://img.shields.io/badge/-Laravel-333?style=for-the-badge&logo=laravel)
+
+<a target="_blank" href="https://www.linkedin.com/in/felipe-carvalho-godoi-164a05189">
+  <img align="left" alt="LinkedIN" width="25px" src="https://logospng.org/download/linkedin/logo-linkedin-icon-2048.png" /> 
+</a>
