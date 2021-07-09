@@ -40,7 +40,3 @@ Em desenvolvimento
 ![React JS](https://img.shields.io/badge/-React-333?style=for-the-badge&logo=react)
 ![PHP](https://img.shields.io/badge/-Php-333?style=for-the-badge&logo=php)
 ![Laravel](https://img.shields.io/badge/-Laravel-333?style=for-the-badge&logo=laravel)
-
-<a target="_blank" href="https://www.linkedin.com/in/felipecarvalhogodoi/">
-  <img align="left" alt="LinkedIN" width="25px" src="https://logospng.org/download/linkedin/logo-linkedin-icon-2048.png" /> 
-</a>
